@@ -1,4 +1,4 @@
-name = "navneet"
+name = "Navneet"
 role = "QA engineer"
 experience = "6 years"
 
@@ -12,3 +12,11 @@ print("----------------------------------")
 print(type(role))
 print("----------------------------------")
 print(type(experience))
+
+print(name.lower())
+print(len(name))
+
+
+print(f"lenght of {name}; {len(name)}, length of {role}; {len(role)}, length for {experience}; {len(experience)}")
+
+print(f"First character is: {name[0]}, last character is: {name[-1]}")
