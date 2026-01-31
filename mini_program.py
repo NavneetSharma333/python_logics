@@ -7,7 +7,7 @@ users = [
     ("standard_user", "secret_sauce"),
     ("error_user", "secret_sauce"),
     ("problem_user", "secret_sauce"),
-    #("visual_user", "pass3"),
+    ("visual_user", "pass3")
     ]
 
 driver = webdriver.Chrome()
@@ -30,23 +30,22 @@ for username, password in users:
     time.sleep(3)
     print(driver.current_url)
     
-    hamburger_menu = driver.find_element(By.ID, "react-burger-menu-btn")
-    hamburger_menu.click()
+    url_after_login = "https://www.saucedemo.com/inventory.html"
     
-    logout_button = driver.find_element(By.ID, "logout_sidebar_link")
-    logout_button.click()
-    
-    #homepage_text = driver.find_element(By.XPATH, "//span[@class='title']")
-    
-    if "/inventory.html" in driver.current_url:
+    if driver.current_url == url_after_login:
         print(username, "Pass")
+        
+        hamburger_menu = driver.find_element(By.ID, "react-burger-menu-btn")
+        hamburger_menu.click()
+    
+        logout_button = driver.find_element(By.ID, "logout_sidebar_link")
+        logout_button.click()
+        print(driver.current_url)
+    
     else:
         print(username, "fail")
     
-
+    #homepage_text = driver.find_element(By.XPATH, "//span[@class='title']")
     
-driver.quit()
-
-    
-#print(users)
+#driver.quit()
     
