@@ -18,7 +18,7 @@ password = input("enter password: ")
 
 if username in users:
     if users[username]==password:
-        print(f"Login successful \nWelcome, {username}!")
+        print(f"Login successful\nWelcome, {username}!")
     else:
         print("wrong password or email")
 else:
