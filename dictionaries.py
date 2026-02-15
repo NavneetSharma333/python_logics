@@ -20,6 +20,6 @@ if username in users:
     if users[username]==password:
         print("login success")
     else:
-        print("wrong password")
+        print("wrong password or email")
 else:
     print("user not found")
